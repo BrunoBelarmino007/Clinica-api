@@ -1,0 +1,16 @@
+FROM python:3.9
+
+WORKDIR /app
+
+# Copie o arquivo requirements.txt e instale as dependências
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copie o código da sua aplicação
+COPY . .
+
+# Exponha a porta utilizada pelo backend
+EXPOSE 8080
+
+# Comando para iniciar sua aplicação backend (substitua pelo seu comando real)
+CMD ["python", "main.py"]  # Substitua com o ponto de entrada da sua aplicação
